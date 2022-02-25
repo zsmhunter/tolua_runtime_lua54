@@ -1,2 +1,2 @@
 # tolua_runtime_lua53
-从tolua创建的分支，新增sqlite跟换了protobuf库
+从tolua创建的分支，新增LuaSQLite3跟换了protobuf库
