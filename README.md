@@ -33,13 +33,13 @@ https://github.com/diegonehab/luasocket<br>
 **struct**<br>
 http://www.inf.puc-rio.br/~roberto/struct/<br>
 **lpeg**<br>
-http://www.inf.puc-rio.br/~roberto/lpeg/lpeg.html
+http://www.inf.puc-rio.br/~roberto/lpeg/lpeg.html<br>
 **LuaSQLite3(version 0.9.2)**<br>
-http://lua.sqlite.org/index.cgi/home
+http://lua.sqlite.org/index.cgi/home<br>
 **lpack (修改过，适配lua5.1的64位，增加64位导入导出int64跟uint64的userdata）**<br>
-https://github.com/LuaDist/lpack
+https://github.com/LuaDist/lpack<br>
 **lua-protobuf**<br>
-https://github.com/starwing/lua-protobuf
+https://github.com/starwing/lua-protobuf<br>
 
 # 关于mac上编译iOS 32位runtime库
 * 苹果系统升级到xcode10后，移除了编译32位lib的支持，如果有需求编译支持32位版本的runtime库，请用xcode9.4.1编译，目前默认原生的编译好的是同时支持32、64位的runtime
