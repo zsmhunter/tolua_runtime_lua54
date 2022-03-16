@@ -52,6 +52,7 @@ void tolua_pushint64(lua_State* L, int64_t n);
 
 void tolua_openuint64(lua_State* L);
 int  tolua_newuint64(lua_State* L);
+void tolua_pushuint64(lua_State *L, uint64_t n);
 
 extern int toluaflags;
 

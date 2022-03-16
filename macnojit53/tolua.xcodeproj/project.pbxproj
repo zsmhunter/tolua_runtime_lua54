@@ -73,6 +73,7 @@
 		84F8B8B51C45679700AE9B8F /* struct.c in Sources */ = {isa = PBXBuildFile; fileRef = 84F8B8B41C45679700AE9B8F /* struct.c */; };
 		9962FA5F27C8786000244EE1 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 9962FA5C27C8786000244EE1 /* sqlite3.c */; };
 		9962FA6027C8786000244EE1 /* lsqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 9962FA5E27C8786000244EE1 /* lsqlite3.c */; };
+		997D307527E0BAB7001D9311 /* lpack.c in Sources */ = {isa = PBXBuildFile; fileRef = 997D307427E0BAB7001D9311 /* lpack.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -200,6 +201,7 @@
 		9962FA5C27C8786000244EE1 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
 		9962FA5D27C8786000244EE1 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 		9962FA5E27C8786000244EE1 /* lsqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lsqlite3.c; sourceTree = "<group>"; };
+		997D307427E0BAB7001D9311 /* lpack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lpack.c; path = ../../lpack.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 				84F8B8B81C4567C100AE9B8F /* luasocket */,
 				84F8B8B41C45679700AE9B8F /* struct.c */,
 				84F8B8B01C45677A00AE9B8F /* pb.c */,
+				997D307427E0BAB7001D9311 /* lpack.c */,
 				849CC46A1C9846C800D4D510 /* int64.c */,
 				8445EB121D4C9D2100397F5E /* uint64.c */,
 				84F8B8B21C45678E00AE9B8F /* tolua.c */,
@@ -475,6 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				997D307527E0BAB7001D9311 /* lpack.c in Sources */,
 				8419C9F423266F8A00283BB0 /* lpcap.c in Sources */,
 				84F8B8B51C45679700AE9B8F /* struct.c in Sources */,
 				842A59A91C85B76100EA2815 /* fpconv.c in Sources */,

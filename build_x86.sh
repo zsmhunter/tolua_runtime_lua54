@@ -9,8 +9,15 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 while :
 do
     echo "Please choose (1)luajit; (2)lua5.3"
-    read input
-    case $input in
+    if [ $# -eq 0 ] 
+    then
+        read input
+        param_input=$input
+    else
+        param_input=$1
+        echo "param_input: $param_input"
+    fi
+    case $param_input in
         "1")
             luapath=$luajitdir
             lualibname="libluajit"

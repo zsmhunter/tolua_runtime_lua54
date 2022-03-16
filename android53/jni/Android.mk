@@ -42,6 +42,7 @@ LOCAL_SRC_FILES :=	../../tolua.c \
  					../../luasocket/compat.c \
  					../../lsqlite3/sqlite3.c \
  					../../lsqlite3/lsqlite3.c \
+ 					../../lpack.c \
  					
 LOCAL_WHOLE_STATIC_LIBRARIES += liblua
 include $(BUILD_SHARED_LIBRARY)
