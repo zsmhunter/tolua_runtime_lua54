@@ -10,13 +10,10 @@
 
 # Libraries
 *.lib
-*.a
 *.la
 *.lo
 
 # Shared objects (inc. Windows DLLs)
-*.dll
-#*.so
 *.so.*
 *.dylib
 
@@ -30,3 +27,9 @@
 
 # Debug files
 *.dSYM/
+android/jni/libluajit.a
+android53/jni/liblua.a
+window/x86_64/libluajit.a
+window/x86_64/liblua.a
+window/x86/libluajit.a
+window/x86/liblua.a
