@@ -5,6 +5,7 @@ luacdir="lua53"
 luajitdir="luajit-2.1"
 luapath=""
 lualibname=""
+pbcbinding=""
 outpath="Plugins"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -23,12 +24,14 @@ do
         "1")
             luapath=$luajitdir
             lualibname="libluajit"
+            pbcbinding="lua/pbc-lua"
 			outpath="Plugins"
             break
         ;;
         "2")
             luapath=$luacdir
             lualibname="liblua"
+            pbcbinding="lua53/pbc-lua53"
 			outpath="Plugins53"
             break
         ;;
@@ -55,6 +58,12 @@ esac
 
 cp src/$lualibname.a ../window/x86/$lualibname.a
 mingw32-make clean
+
+cd ../pbc/
+make clean
+make BUILDMODE=static CC=" gcc -m32"
+cp build/libpbc.a ../window/x86/libpbc.a
+
 
 cd ..
 
@@ -89,13 +98,16 @@ gcc -m32 -O2 -std=gnu99 -shared \
 	lsqlite3/sqlite3.c \
     lsqlite3/lsqlite3.c \
     lpack.c \
+    pbc/binding/$pbcbinding.c \
 	-o $outpath/x86/tolua.dll \
 	-I./ \
  	-I$luapath/src \
+    -Ipbc \
 	-Icjson \
 	-Iluasocket \
 	-Ilpeg \
 	-lws2_32 \
- 	-Wl,--whole-archive window/x86/$lualibname.a -Wl,--no-whole-archive -static-libgcc -static-libstdc++
+	-Wl,--whole-archive window/x86/$lualibname.a window/x86/libpbc.a \
+    -Wl,--no-whole-archive -static-libgcc -static-libstdc++
 
 echo "build tolua.dll success" 	

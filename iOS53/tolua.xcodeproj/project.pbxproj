@@ -44,6 +44,16 @@
 		9995E04C27E18B720069C71C /* lpack.c in Sources */ = {isa = PBXBuildFile; fileRef = 9995E04B27E18B720069C71C /* lpack.c */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		998C12FF27E2041A00709EDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 998C12A027E2041A00709EDE /* pbc.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D7EF1334179E5530002B6A46;
+			remoteInfo = pbc;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		840092991CCF43D600F89A56 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -117,6 +127,113 @@
 		847FD89F22B37C6500A92ACA /* compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compat.h; sourceTree = "<group>"; };
 		847FD8A022B37C6500A92ACA /* compat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = compat.c; sourceTree = "<group>"; };
 		997270C427C8B14D00F6E66E /* pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pb.h; path = ../../pb.h; sourceTree = "<group>"; };
+		998C127D27E2041A00709EDE /* pbc 3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "pbc 3.xcodeproj"; sourceTree = "<group>"; };
+		998C128027E2041A00709EDE /* pbc.sln */ = {isa = PBXFileReference; lastKnownFileType = text; path = pbc.sln; sourceTree = "<group>"; };
+		998C128127E2041A00709EDE /* pbc.vcxproj.filters */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = pbc.vcxproj.filters; sourceTree = "<group>"; };
+		998C128227E2041A00709EDE /* Android.mk */ = {isa = PBXFileReference; lastKnownFileType = text; path = Android.mk; sourceTree = "<group>"; };
+		998C128327E2041A00709EDE /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		998C128427E2041A00709EDE /* pbc 5.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "pbc 5.xcodeproj"; sourceTree = "<group>"; };
+		998C128827E2041A00709EDE /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		998C128927E2041A00709EDE /* array.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = array.c; sourceTree = "<group>"; };
+		998C128A27E2041A00709EDE /* decode.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = decode.c; sourceTree = "<group>"; };
+		998C128B27E2041A00709EDE /* float.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = float.proto; sourceTree = "<group>"; };
+		998C128C27E2041A00709EDE /* pbc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = pbc.c; sourceTree = "<group>"; };
+		998C128D27E2041A00709EDE /* addressbook.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = addressbook.proto; sourceTree = "<group>"; };
+		998C128E27E2041A00709EDE /* varint.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = varint.c; sourceTree = "<group>"; };
+		998C128F27E2041A00709EDE /* readfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = readfile.h; sourceTree = "<group>"; };
+		998C129027E2041A00709EDE /* map.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = map.c; sourceTree = "<group>"; };
+		998C129127E2041A00709EDE /* float.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = float.c; sourceTree = "<group>"; };
+		998C129227E2041A00709EDE /* test.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = test.proto; sourceTree = "<group>"; };
+		998C129327E2041A00709EDE /* test.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = test.c; sourceTree = "<group>"; };
+		998C129427E2041A00709EDE /* addressbook.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = addressbook.c; sourceTree = "<group>"; };
+		998C129527E2041A00709EDE /* descriptor.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = descriptor.proto; sourceTree = "<group>"; };
+		998C129627E2041A00709EDE /* pattern.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = pattern.c; sourceTree = "<group>"; };
+		998C129727E2041A00709EDE /* pbc 2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "pbc 2.xcodeproj"; sourceTree = "<group>"; };
+		998C129A27E2041A00709EDE /* build_android.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_android.sh; sourceTree = "<group>"; };
+		998C129B27E2041A00709EDE /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		998C129C27E2041A00709EDE /* build_ios.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_ios.sh; sourceTree = "<group>"; };
+		998C129D27E2041A00709EDE /* pbc 4.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "pbc 4.xcodeproj"; sourceTree = "<group>"; };
+		998C12A027E2041A00709EDE /* pbc.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = pbc.xcodeproj; sourceTree = "<group>"; };
+		998C12A527E2041A00709EDE /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		998C12A627E2041A00709EDE /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		998C12A727E2041A00709EDE /* protobuf.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = protobuf.lua; sourceTree = "<group>"; };
+		998C12A827E2041A00709EDE /* test.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.lua; sourceTree = "<group>"; };
+		998C12A927E2041A00709EDE /* pbc-lua53.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "pbc-lua53.c"; sourceTree = "<group>"; };
+		998C12AB27E2041A00709EDE /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		998C12AC27E2041A00709EDE /* parser.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = parser.lua; sourceTree = "<group>"; };
+		998C12AD27E2041A00709EDE /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		998C12AE27E2041A00709EDE /* testparser.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = testparser.lua; sourceTree = "<group>"; };
+		998C12AF27E2041A00709EDE /* protobuf.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = protobuf.lua; sourceTree = "<group>"; };
+		998C12B027E2041A00709EDE /* test2.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = test2.lua; sourceTree = "<group>"; };
+		998C12B127E2041A00709EDE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		998C12B227E2041A00709EDE /* test.lua */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.lua; sourceTree = "<group>"; };
+		998C12B327E2041A00709EDE /* pbc-lua.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "pbc-lua.c"; sourceTree = "<group>"; };
+		998C12B427E2041A00709EDE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		998C12B527E2041A00709EDE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		998C12B727E2041A00709EDE /* pbc.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = pbc.exe; sourceTree = "<group>"; };
+		998C12B827E2041A00709EDE /* test.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.exe; sourceTree = "<group>"; };
+		998C12B927E2041A00709EDE /* addressbook.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = addressbook.exe; sourceTree = "<group>"; };
+		998C12BB27E2041A00709EDE /* varint.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = varint.o; sourceTree = "<group>"; };
+		998C12BC27E2041A00709EDE /* proto.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = proto.o; sourceTree = "<group>"; };
+		998C12BD27E2041A00709EDE /* array.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = array.d; sourceTree = "<group>"; };
+		998C12BE27E2041A00709EDE /* map.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = map.o; sourceTree = "<group>"; };
+		998C12BF27E2041A00709EDE /* rmessage.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = rmessage.d; sourceTree = "<group>"; };
+		998C12C027E2041A00709EDE /* register.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = register.d; sourceTree = "<group>"; };
+		998C12C127E2041A00709EDE /* context.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = context.o; sourceTree = "<group>"; };
+		998C12C227E2041A00709EDE /* stringpool.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = stringpool.d; sourceTree = "<group>"; };
+		998C12C327E2041A00709EDE /* decode.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = decode.d; sourceTree = "<group>"; };
+		998C12C427E2041A00709EDE /* bootstrap.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = bootstrap.o; sourceTree = "<group>"; };
+		998C12C527E2041A00709EDE /* wmessage.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = wmessage.o; sourceTree = "<group>"; };
+		998C12C627E2041A00709EDE /* pattern.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = pattern.o; sourceTree = "<group>"; };
+		998C12C727E2041A00709EDE /* alloc.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = alloc.d; sourceTree = "<group>"; };
+		998C12C827E2041A00709EDE /* varint.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = varint.d; sourceTree = "<group>"; };
+		998C12C927E2041A00709EDE /* rmessage.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = rmessage.o; sourceTree = "<group>"; };
+		998C12CA27E2041A00709EDE /* array.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = array.o; sourceTree = "<group>"; };
+		998C12CB27E2041A00709EDE /* map.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = map.d; sourceTree = "<group>"; };
+		998C12CC27E2041A00709EDE /* proto.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = proto.d; sourceTree = "<group>"; };
+		998C12CD27E2041A00709EDE /* context.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = context.d; sourceTree = "<group>"; };
+		998C12CE27E2041A00709EDE /* register.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = register.o; sourceTree = "<group>"; };
+		998C12CF27E2041A00709EDE /* alloc.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = alloc.o; sourceTree = "<group>"; };
+		998C12D027E2041A00709EDE /* pattern.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = pattern.d; sourceTree = "<group>"; };
+		998C12D127E2041A00709EDE /* wmessage.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = wmessage.d; sourceTree = "<group>"; };
+		998C12D227E2041A00709EDE /* bootstrap.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = bootstrap.d; sourceTree = "<group>"; };
+		998C12D327E2041A00709EDE /* decode.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = decode.o; sourceTree = "<group>"; };
+		998C12D427E2041A00709EDE /* stringpool.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = stringpool.o; sourceTree = "<group>"; };
+		998C12D527E2041A00709EDE /* libpbc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpbc.a; sourceTree = "<group>"; };
+		998C12D627E2041A00709EDE /* decode.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = decode.exe; sourceTree = "<group>"; };
+		998C12D727E2041A00709EDE /* pattern.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = pattern.exe; sourceTree = "<group>"; };
+		998C12D827E2041A00709EDE /* map.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = map.exe; sourceTree = "<group>"; };
+		998C12D927E2041A00709EDE /* float.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = float.exe; sourceTree = "<group>"; };
+		998C12DA27E2041A00709EDE /* license.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		998C12DB27E2041A00709EDE /* pbc.vcxproj */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = pbc.vcxproj; sourceTree = "<group>"; };
+		998C12DC27E2041A00709EDE /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .travis.yml; sourceTree = "<group>"; };
+		998C12DD27E2041A00709EDE /* pbc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pbc.h; sourceTree = "<group>"; };
+		998C12DF27E2041A00709EDE /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		998C12E027E2041A00709EDE /* dump.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dump.c; sourceTree = "<group>"; };
+		998C12E227E2041A00709EDE /* varint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = varint.h; sourceTree = "<group>"; };
+		998C12E327E2041A00709EDE /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		998C12E427E2041A00709EDE /* proto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = proto.h; sourceTree = "<group>"; };
+		998C12E527E2041A00709EDE /* descriptor.pbc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = descriptor.pbc.h; sourceTree = "<group>"; };
+		998C12E627E2041A00709EDE /* array.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = array.c; sourceTree = "<group>"; };
+		998C12E727E2041A00709EDE /* map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = map.h; sourceTree = "<group>"; };
+		998C12E827E2041A00709EDE /* rmessage.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rmessage.c; sourceTree = "<group>"; };
+		998C12E927E2041A00709EDE /* register.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = register.c; sourceTree = "<group>"; };
+		998C12EA27E2041A00709EDE /* context.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = context.h; sourceTree = "<group>"; };
+		998C12EB27E2041A00709EDE /* decode.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = decode.c; sourceTree = "<group>"; };
+		998C12EC27E2041A00709EDE /* stringpool.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = stringpool.c; sourceTree = "<group>"; };
+		998C12ED27E2041A00709EDE /* bootstrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bootstrap.h; sourceTree = "<group>"; };
+		998C12EE27E2041A00709EDE /* pattern.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pattern.h; sourceTree = "<group>"; };
+		998C12EF27E2041A00709EDE /* alloc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = alloc.c; sourceTree = "<group>"; };
+		998C12F027E2041A00709EDE /* varint.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = varint.c; sourceTree = "<group>"; };
+		998C12F127E2041A00709EDE /* array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = array.h; sourceTree = "<group>"; };
+		998C12F227E2041A00709EDE /* map.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = map.c; sourceTree = "<group>"; };
+		998C12F327E2041A00709EDE /* proto.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = proto.c; sourceTree = "<group>"; };
+		998C12F427E2041A00709EDE /* context.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = context.c; sourceTree = "<group>"; };
+		998C12F527E2041A00709EDE /* wmessage.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = wmessage.c; sourceTree = "<group>"; };
+		998C12F627E2041A00709EDE /* alloc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = alloc.h; sourceTree = "<group>"; };
+		998C12F727E2041A00709EDE /* pattern.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = pattern.c; sourceTree = "<group>"; };
+		998C12F827E2041A00709EDE /* bootstrap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bootstrap.c; sourceTree = "<group>"; };
+		998C12F927E2041A00709EDE /* stringpool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stringpool.h; sourceTree = "<group>"; };
 		9995E04B27E18B720069C71C /* lpack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lpack.c; path = ../../lpack.c; sourceTree = "<group>"; };
 		99F0FD1627C877B9003B5B39 /* sqlite3.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
 		99F0FD1727C877B9003B5B39 /* sqlite3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
@@ -154,6 +271,7 @@
 		8400929D1CCF43D600F89A56 /* tolua */ = {
 			isa = PBXGroup;
 			children = (
+				998C127C27E2041A00709EDE /* pbc */,
 				99F0FD1527C877B9003B5B39 /* lsqlite3 */,
 				8419CA13232673A700283BB0 /* lpeg */,
 				840092BD1CCF45A800F89A56 /* luasocket */,
@@ -245,6 +363,221 @@
 			path = ../../lpeg;
 			sourceTree = "<group>";
 		};
+		998C127C27E2041A00709EDE /* pbc */ = {
+			isa = PBXGroup;
+			children = (
+				998C127D27E2041A00709EDE /* pbc 3.xcodeproj */,
+				998C128027E2041A00709EDE /* pbc.sln */,
+				998C128127E2041A00709EDE /* pbc.vcxproj.filters */,
+				998C128227E2041A00709EDE /* Android.mk */,
+				998C128327E2041A00709EDE /* CMakeLists.txt */,
+				998C128427E2041A00709EDE /* pbc 5.xcodeproj */,
+				998C128727E2041A00709EDE /* test */,
+				998C129727E2041A00709EDE /* pbc 2.xcodeproj */,
+				998C129A27E2041A00709EDE /* build_android.sh */,
+				998C129B27E2041A00709EDE /* Makefile */,
+				998C129C27E2041A00709EDE /* build_ios.sh */,
+				998C129D27E2041A00709EDE /* pbc 4.xcodeproj */,
+				998C12A027E2041A00709EDE /* pbc.xcodeproj */,
+				998C12A327E2041A00709EDE /* binding */,
+				998C12B427E2041A00709EDE /* README.md */,
+				998C12B527E2041A00709EDE /* .gitignore */,
+				998C12B627E2041A00709EDE /* build */,
+				998C12DA27E2041A00709EDE /* license.txt */,
+				998C12DB27E2041A00709EDE /* pbc.vcxproj */,
+				998C12DC27E2041A00709EDE /* .travis.yml */,
+				998C12DD27E2041A00709EDE /* pbc.h */,
+				998C12DE27E2041A00709EDE /* tool */,
+				998C12E127E2041A00709EDE /* src */,
+			);
+			name = pbc;
+			path = ../../pbc;
+			sourceTree = "<group>";
+		};
+		998C127E27E2041A00709EDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		998C128527E2041A00709EDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		998C128727E2041A00709EDE /* test */ = {
+			isa = PBXGroup;
+			children = (
+				998C128827E2041A00709EDE /* CMakeLists.txt */,
+				998C128927E2041A00709EDE /* array.c */,
+				998C128A27E2041A00709EDE /* decode.c */,
+				998C128B27E2041A00709EDE /* float.proto */,
+				998C128C27E2041A00709EDE /* pbc.c */,
+				998C128D27E2041A00709EDE /* addressbook.proto */,
+				998C128E27E2041A00709EDE /* varint.c */,
+				998C128F27E2041A00709EDE /* readfile.h */,
+				998C129027E2041A00709EDE /* map.c */,
+				998C129127E2041A00709EDE /* float.c */,
+				998C129227E2041A00709EDE /* test.proto */,
+				998C129327E2041A00709EDE /* test.c */,
+				998C129427E2041A00709EDE /* addressbook.c */,
+				998C129527E2041A00709EDE /* descriptor.proto */,
+				998C129627E2041A00709EDE /* pattern.c */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		998C129827E2041A00709EDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		998C129E27E2041A00709EDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		998C12A127E2041A00709EDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				998C130027E2041A00709EDE /* libpbc.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		998C12A327E2041A00709EDE /* binding */ = {
+			isa = PBXGroup;
+			children = (
+				998C12A427E2041A00709EDE /* lua53 */,
+				998C12AA27E2041A00709EDE /* lua */,
+			);
+			path = binding;
+			sourceTree = "<group>";
+		};
+		998C12A427E2041A00709EDE /* lua53 */ = {
+			isa = PBXGroup;
+			children = (
+				998C12A527E2041A00709EDE /* CMakeLists.txt */,
+				998C12A627E2041A00709EDE /* Makefile */,
+				998C12A727E2041A00709EDE /* protobuf.lua */,
+				998C12A827E2041A00709EDE /* test.lua */,
+				998C12A927E2041A00709EDE /* pbc-lua53.c */,
+			);
+			path = lua53;
+			sourceTree = "<group>";
+		};
+		998C12AA27E2041A00709EDE /* lua */ = {
+			isa = PBXGroup;
+			children = (
+				998C12AB27E2041A00709EDE /* CMakeLists.txt */,
+				998C12AC27E2041A00709EDE /* parser.lua */,
+				998C12AD27E2041A00709EDE /* Makefile */,
+				998C12AE27E2041A00709EDE /* testparser.lua */,
+				998C12AF27E2041A00709EDE /* protobuf.lua */,
+				998C12B027E2041A00709EDE /* test2.lua */,
+				998C12B127E2041A00709EDE /* README.md */,
+				998C12B227E2041A00709EDE /* test.lua */,
+				998C12B327E2041A00709EDE /* pbc-lua.c */,
+			);
+			path = lua;
+			sourceTree = "<group>";
+		};
+		998C12B627E2041A00709EDE /* build */ = {
+			isa = PBXGroup;
+			children = (
+				998C12B727E2041A00709EDE /* pbc.exe */,
+				998C12B827E2041A00709EDE /* test.exe */,
+				998C12B927E2041A00709EDE /* addressbook.exe */,
+				998C12BA27E2041A00709EDE /* o */,
+				998C12D527E2041A00709EDE /* libpbc.a */,
+				998C12D627E2041A00709EDE /* decode.exe */,
+				998C12D727E2041A00709EDE /* pattern.exe */,
+				998C12D827E2041A00709EDE /* map.exe */,
+				998C12D927E2041A00709EDE /* float.exe */,
+			);
+			path = build;
+			sourceTree = "<group>";
+		};
+		998C12BA27E2041A00709EDE /* o */ = {
+			isa = PBXGroup;
+			children = (
+				998C12BB27E2041A00709EDE /* varint.o */,
+				998C12BC27E2041A00709EDE /* proto.o */,
+				998C12BD27E2041A00709EDE /* array.d */,
+				998C12BE27E2041A00709EDE /* map.o */,
+				998C12BF27E2041A00709EDE /* rmessage.d */,
+				998C12C027E2041A00709EDE /* register.d */,
+				998C12C127E2041A00709EDE /* context.o */,
+				998C12C227E2041A00709EDE /* stringpool.d */,
+				998C12C327E2041A00709EDE /* decode.d */,
+				998C12C427E2041A00709EDE /* bootstrap.o */,
+				998C12C527E2041A00709EDE /* wmessage.o */,
+				998C12C627E2041A00709EDE /* pattern.o */,
+				998C12C727E2041A00709EDE /* alloc.d */,
+				998C12C827E2041A00709EDE /* varint.d */,
+				998C12C927E2041A00709EDE /* rmessage.o */,
+				998C12CA27E2041A00709EDE /* array.o */,
+				998C12CB27E2041A00709EDE /* map.d */,
+				998C12CC27E2041A00709EDE /* proto.d */,
+				998C12CD27E2041A00709EDE /* context.d */,
+				998C12CE27E2041A00709EDE /* register.o */,
+				998C12CF27E2041A00709EDE /* alloc.o */,
+				998C12D027E2041A00709EDE /* pattern.d */,
+				998C12D127E2041A00709EDE /* wmessage.d */,
+				998C12D227E2041A00709EDE /* bootstrap.d */,
+				998C12D327E2041A00709EDE /* decode.o */,
+				998C12D427E2041A00709EDE /* stringpool.o */,
+			);
+			path = o;
+			sourceTree = "<group>";
+		};
+		998C12DE27E2041A00709EDE /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				998C12DF27E2041A00709EDE /* CMakeLists.txt */,
+				998C12E027E2041A00709EDE /* dump.c */,
+			);
+			path = tool;
+			sourceTree = "<group>";
+		};
+		998C12E127E2041A00709EDE /* src */ = {
+			isa = PBXGroup;
+			children = (
+				998C12E227E2041A00709EDE /* varint.h */,
+				998C12E327E2041A00709EDE /* CMakeLists.txt */,
+				998C12E427E2041A00709EDE /* proto.h */,
+				998C12E527E2041A00709EDE /* descriptor.pbc.h */,
+				998C12E627E2041A00709EDE /* array.c */,
+				998C12E727E2041A00709EDE /* map.h */,
+				998C12E827E2041A00709EDE /* rmessage.c */,
+				998C12E927E2041A00709EDE /* register.c */,
+				998C12EA27E2041A00709EDE /* context.h */,
+				998C12EB27E2041A00709EDE /* decode.c */,
+				998C12EC27E2041A00709EDE /* stringpool.c */,
+				998C12ED27E2041A00709EDE /* bootstrap.h */,
+				998C12EE27E2041A00709EDE /* pattern.h */,
+				998C12EF27E2041A00709EDE /* alloc.c */,
+				998C12F027E2041A00709EDE /* varint.c */,
+				998C12F127E2041A00709EDE /* array.h */,
+				998C12F227E2041A00709EDE /* map.c */,
+				998C12F327E2041A00709EDE /* proto.c */,
+				998C12F427E2041A00709EDE /* context.c */,
+				998C12F527E2041A00709EDE /* wmessage.c */,
+				998C12F627E2041A00709EDE /* alloc.h */,
+				998C12F727E2041A00709EDE /* pattern.c */,
+				998C12F827E2041A00709EDE /* bootstrap.c */,
+				998C12F927E2041A00709EDE /* stringpool.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		99F0FD1527C877B9003B5B39 /* lsqlite3 */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,12 +635,44 @@
 			mainGroup = 840092921CCF43D600F89A56;
 			productRefGroup = 8400929C1CCF43D600F89A56 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 998C129827E2041A00709EDE /* Products */;
+					ProjectRef = 998C129727E2041A00709EDE /* pbc 2.xcodeproj */;
+				},
+				{
+					ProductGroup = 998C127E27E2041A00709EDE /* Products */;
+					ProjectRef = 998C127D27E2041A00709EDE /* pbc 3.xcodeproj */;
+				},
+				{
+					ProductGroup = 998C129E27E2041A00709EDE /* Products */;
+					ProjectRef = 998C129D27E2041A00709EDE /* pbc 4.xcodeproj */;
+				},
+				{
+					ProductGroup = 998C128527E2041A00709EDE /* Products */;
+					ProjectRef = 998C128427E2041A00709EDE /* pbc 5.xcodeproj */;
+				},
+				{
+					ProductGroup = 998C12A127E2041A00709EDE /* Products */;
+					ProjectRef = 998C12A027E2041A00709EDE /* pbc.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8400929A1CCF43D600F89A56 /* tolua */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		998C130027E2041A00709EDE /* libpbc.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libpbc.a;
+			remoteRef = 998C12FF27E2041A00709EDE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		840092971CCF43D600F89A56 /* Sources */ = {
