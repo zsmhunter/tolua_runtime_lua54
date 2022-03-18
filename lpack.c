@@ -338,7 +338,7 @@ static int l_pack(lua_State *L) 		/** pack(f,...) */
 #if LUA_VERSION_NUM < 503
    case OP_INT64:
    {
-    int64_t n = *(int64_t*)lua_touserdata(L, i++);
+    int64_t n = tolua_toint64(L, i++);
     long long a = (long long)n;
     doswap(swap,&a,sizeof(a));
     luaL_addlstring(&b,(void*)&a,sizeof(a));
@@ -346,7 +346,7 @@ static int l_pack(lua_State *L) 		/** pack(f,...) */
    }
    case OP_UINT64:
    {
-    uint64_t n = *(uint64_t*)lua_touserdata(L, i++);
+    uint64_t n = tolua_touint64(L, i++);
     unsigned long long a = (unsigned long long)n;
     doswap(swap,&a,sizeof(a));
     luaL_addlstring(&b,(void*)&a,sizeof(a));
