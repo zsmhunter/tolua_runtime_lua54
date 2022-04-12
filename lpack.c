@@ -178,7 +178,7 @@ static int l_unpack(lua_State *L) 		/** unpack(s,f,[init]) */
     i+=m;
     doswap(swap,&a,m);
     char temp[64];
-    sprintf(temp, "%" PRId64, a);    
+    sprintf(temp, "%I64d", a);    
     lua_pushstring(L, temp);
     ++n;
     break;
@@ -192,7 +192,7 @@ static int l_unpack(lua_State *L) 		/** unpack(s,f,[init]) */
     i+=m;
     doswap(swap,&a,m);
     char temp[64];
-    sprintf(temp, "%" PRIu64, a);    
+    sprintf(temp, "%I64u", a);    
     lua_pushstring(L, temp);
     ++n;
     break;
