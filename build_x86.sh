@@ -43,7 +43,7 @@ echo "select : $luapath"
 cd $DIR/$luapath/src
 
 # Android/x86, x86 (i686 SSE3), Android 4.0+ (ICS)
-NDK=D:/Unity/android-ndk-r16b
+NDK=D:/Program/Android/Sdk/ndk/16.1.4479499
 NDKABI=21
 NDKVER=$NDK/toolchains/x86-4.9
 NDKP=$NDKVER/prebuilt/windows-x86_64/bin/i686-linux-android-

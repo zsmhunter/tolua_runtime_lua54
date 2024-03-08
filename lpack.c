@@ -240,8 +240,8 @@ static int l_unpack(lua_State *L) 		/** unpack(s,f,[init]) */
    UNPACKINTERGER(OP_UINT, unsigned int)
    UNPACKINTERGER(OP_LONG, long)
    UNPACKINTERGER(OP_ULONG, unsigned long)
-   UNPACKINTERGER(OP_INT64TONUMBER, long long)
-   UNPACKINTERGER(OP_UINT64TONUMBER, unsigned long long)
+   UNPACKNUMBER(OP_INT64TONUMBER, long long)
+   UNPACKNUMBER(OP_UINT64TONUMBER, unsigned long long)
    case ' ': case ',':
     break;
    default:
@@ -370,8 +370,8 @@ static int l_pack(lua_State *L) 		/** pack(f,...) */
    PACKINTERGER(OP_UINT, unsigned int)
    PACKINTERGER(OP_LONG, long)
    PACKINTERGER(OP_ULONG, unsigned long)
-   PACKINTERGER(OP_INT64TONUMBER, long long)
-   PACKINTERGER(OP_UINT64TONUMBER, unsigned long long)
+   PACKNUMBER(OP_INT64TONUMBER, long long)
+   PACKNUMBER(OP_UINT64TONUMBER, unsigned long long)
    case ' ': case ',':
     break;
    default:

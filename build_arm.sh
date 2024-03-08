@@ -43,7 +43,7 @@ echo "select : $luapath"
 cd $DIR/$luapath/src
 
 # Android/ARM, armeabi-v7a (ARMv7 VFP), Android 4.0+ (ICS)
-NDK=D:/Unity/android-ndk-r16b
+NDK=D:/Program/Android/Sdk/ndk/16.1.4479499
 NDKABI=21
 NDKVER=$NDK/toolchains/arm-linux-androideabi-4.9
 NDKP=$NDKVER/prebuilt/windows-x86_64/bin/arm-linux-androideabi-

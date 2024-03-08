@@ -1,6 +1,6 @@
 /*
 ** Package library.
-** Copyright (C) 2005-2017 Mike Pall. See Copyright Notice in luajit.h
+** Copyright (C) 2005-2022 Mike Pall. See Copyright Notice in luajit.h
 **
 ** Major portions taken verbatim or adapted from the Lua interpreter.
 ** Copyright (C) 1994-2012 Lua.org, PUC-Rio. See Copyright Notice in lua.h
@@ -57,7 +57,7 @@ static lua_CFunction ll_sym(lua_State *L, void *lib, const char *sym)
 
 static const char *ll_bcsym(void *lib, const char *sym)
 {
-#if defined(RTLD_DEFAULT)
+#if defined(RTLD_DEFAULT) && !defined(NO_RTLD_DEFAULT)
   if (lib == NULL) lib = RTLD_DEFAULT;
 #elif LJ_TARGET_OSX || LJ_TARGET_BSD
   if (lib == NULL) lib = (void *)(intptr_t)-2;
@@ -237,7 +237,12 @@ static const char *mksymname(lua_State *L, const char *modname,
 
 static int ll_loadfunc(lua_State *L, const char *path, const char *name, int r)
 {
-  void **reg = ll_register(L, path);
+  void **reg;
+  if (strlen(path) >= 4096) {
+    lua_pushliteral(L, "path too long");
+    return PACKAGE_ERR_LIB;
+  }
+  reg = ll_register(L, path);
   if (*reg == NULL) *reg = ll_load(L, path, (*name == '*'));
   if (*reg == NULL) {
     return PACKAGE_ERR_LIB;  /* Unable to load library. */
@@ -255,7 +260,7 @@ static int ll_loadfunc(lua_State *L, const char *path, const char *name, int r)
       const char *bcdata = ll_bcsym(*reg, mksymname(L, name, SYMPREFIX_BC));
       lua_pop(L, 1);
       if (bcdata) {
-	if (luaL_loadbuffer(L, bcdata, LJ_MAX_BUF, name) != 0)
+	if (luaL_loadbuffer(L, bcdata, ~(size_t)0, name) != 0)
 	  return PACKAGE_ERR_LOAD;
 	return 0;
       }
@@ -412,7 +417,7 @@ static int lj_cf_package_loader_preload(lua_State *L)
   if (lua_isnil(L, -1)) {  /* Not found? */
     const char *bcname = mksymname(L, name, SYMPREFIX_BC);
     const char *bcdata = ll_bcsym(NULL, bcname);
-    if (bcdata == NULL || luaL_loadbuffer(L, bcdata, LJ_MAX_BUF, name) != 0)
+    if (bcdata == NULL || luaL_loadbuffer(L, bcdata, ~(size_t)0, name) != 0)
       lua_pushfstring(L, "\n\tno field package.preload['%s']", name);
   }
   return 1;
@@ -420,18 +425,17 @@ static int lj_cf_package_loader_preload(lua_State *L)
 
 /* ------------------------------------------------------------------------ */
 
-#define sentinel	((void *)0x4004)
+#define KEY_SENTINEL	(U64x(80000000,00000000)|'s')
 
 static int lj_cf_package_require(lua_State *L)
 {
   const char *name = luaL_checkstring(L, 1);
   int i;
   lua_settop(L, 1);  /* _LOADED table will be at index 2 */
-  const char* key = luaL_gsub(L, name, "/", ".");
   lua_getfield(L, LUA_REGISTRYINDEX, "_LOADED");
-  lua_getfield(L, 3, key);
+  lua_getfield(L, 2, name);
   if (lua_toboolean(L, -1)) {  /* is it there? */
-    if (lua_touserdata(L, -1) == sentinel)  /* check loops */
+    if ((L->top-1)->u64 == KEY_SENTINEL)  /* check loops */
       luaL_error(L, "loop or previous error loading module " LUA_QS, name);
     return 1;  /* package is already loaded */
   }
@@ -454,17 +458,17 @@ static int lj_cf_package_require(lua_State *L)
     else
       lua_pop(L, 1);
   }
-  lua_pushlightuserdata(L, sentinel);
-  lua_setfield(L, 3, key);  /* _LOADED[name] = sentinel */
+  (L->top++)->u64 = KEY_SENTINEL;
+  lua_setfield(L, 2, name);  /* _LOADED[name] = sentinel */
   lua_pushstring(L, name);  /* pass name as argument to module */
   lua_call(L, 1, 1);  /* run loaded module */
   if (!lua_isnil(L, -1))  /* non-nil return? */
-    lua_setfield(L, 3, key);  /* _LOADED[name] = returned value */
-  lua_getfield(L, 3, key);
-  if (lua_touserdata(L, -1) == sentinel) {   /* module did not set a value? */
+    lua_setfield(L, 2, name);  /* _LOADED[name] = returned value */
+  lua_getfield(L, 2, name);
+  if ((L->top-1)->u64 == KEY_SENTINEL) {   /* module did not set a value? */
     lua_pushboolean(L, 1);  /* use true as result */
     lua_pushvalue(L, -1);  /* extra copy to be returned */
-    lua_setfield(L, 3, key);  /* _LOADED[name] = true */
+    lua_setfield(L, 2, name);  /* _LOADED[name] = true */
   }
   lj_lib_checkfpu(L);
   return 1;
@@ -511,19 +515,18 @@ static void modinit(lua_State *L, const char *modname)
 static int lj_cf_package_module(lua_State *L)
 {
   const char *modname = luaL_checkstring(L, 1);
-  const char *key = luaL_gsub(L, modname, "/", ".");
   int lastarg = (int)(L->top - L->base);
-  luaL_pushmodule(L, key, 1);
+  luaL_pushmodule(L, modname, 1);
   lua_getfield(L, -1, "_NAME");
   if (!lua_isnil(L, -1)) {  /* Module already initialized? */
     lua_pop(L, 1);
   } else {
     lua_pop(L, 1);
-    modinit(L, key);
+    modinit(L, modname);
   }
   lua_pushvalue(L, -1);
   setfenv(L);
-  dooptions(L, lastarg - 1);
+  dooptions(L, lastarg);
   return LJ_52;
 }
 

@@ -1,6 +1,6 @@
 /*
 ** OS library.
-** Copyright (C) 2005-2017 Mike Pall. See Copyright Notice in luajit.h
+** Copyright (C) 2005-2022 Mike Pall. See Copyright Notice in luajit.h
 **
 ** Major portions taken verbatim or adapted from the Lua interpreter.
 ** Copyright (C) 1994-2008 Lua.org, PUC-Rio. See Copyright Notice in lua.h
@@ -76,7 +76,7 @@ LJLIB_CF(os_rename)
 
 LJLIB_CF(os_tmpname)
 {
-#if LJ_TARGET_PS3 || LJ_TARGET_PS4 || LJ_TARGET_PSVITA
+#if LJ_TARGET_PS3 || LJ_TARGET_PS4 || LJ_TARGET_PS5 || LJ_TARGET_PSVITA || LJ_TARGET_NX
   lj_err_caller(L, LJ_ERR_OSUNIQF);
   return 0;
 #else
@@ -185,7 +185,6 @@ LJLIB_CF(os_date)
 #endif
   } else {
 #if LJ_TARGET_POSIX
-    tzset();
     stm = localtime_r(&t, &rtm);
 #else
     stm = localtime(&t);

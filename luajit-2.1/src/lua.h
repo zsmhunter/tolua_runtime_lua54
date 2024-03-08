@@ -1,7 +1,7 @@
 /*
 ** $Id: lua.h,v 1.218.1.5 2008/08/06 13:30:12 roberto Exp $
 ** Lua - An Extensible Extension Language
-** Lua.org, PUC-Rio, Brazil (http://www.lua.org)
+** Lua.org, PUC-Rio, Brazil (https://www.lua.org)
 ** See Copyright Notice at the end of this file
 */
 
@@ -245,8 +245,6 @@ LUA_API void  (lua_concat) (lua_State *L, int n);
 LUA_API lua_Alloc (lua_getallocf) (lua_State *L, void **ud);
 LUA_API void lua_setallocf (lua_State *L, lua_Alloc f, void *ud);
 
-LUA_API void lua_setexdata(lua_State *L, void *exdata);
-LUA_API void *lua_getexdata(lua_State *L);
 
 
 /*
