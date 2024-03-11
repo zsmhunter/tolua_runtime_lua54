@@ -1,7 +1,8 @@
 #!/bin/bash
 # 64 Bit Version
 mkdir -p window/x86_64
-luacdir="lua53"
+luacdir53="lua53"
+luacdir54="lua54"
 luajitdir="luajit-2.1"
 luapath=""
 lualibname=""
@@ -10,7 +11,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 while :
 do
-    echo "Please choose (1)luajit; (2)lua5.3"
+    echo "Please choose (1)luajit; (2)lua5.3; (3)lua5.4"
     if [ $# -eq 0 ] 
     then
         read input
@@ -27,9 +28,15 @@ do
             break
         ;;
         "2")
-            luapath=$luacdir
+            luapath=$luacdir53
             lualibname="liblua"
             outpath="Plugins53"
+            break
+        ;;
+        "3")
+            luapath=$luacdir53
+            lualibname="liblua"
+            outpath="Plugins54"
             break
         ;;
         *)
@@ -44,8 +51,11 @@ echo "select : $luapath"
 cd $DIR/$luapath
 mingw32-make clean
 
-case $luapath in 
-    $luacdir)
+case $luapath in
+    $luacdir53)
+        mingw32-make mingw BUILDMODE=static CC="gcc -m64 -std=gnu99"
+    ;;
+    $luacdir54)
         mingw32-make mingw BUILDMODE=static CC="gcc -m64 -std=gnu99"
     ;;
     $luajitdir)
@@ -57,6 +67,7 @@ cp src/$lualibname.a ../window/x86_64/$lualibname.a
 mingw32-make clean
 
 cd ..
+mkdir -p $outpath/x86_64
 
 gcc -m64 -O2 -std=gnu99 -shared \
     tolua.c \

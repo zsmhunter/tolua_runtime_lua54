@@ -653,13 +653,18 @@
 #endif
 
 
+
 /*
 @@ lua_getlocaledecpoint gets the locale "radix character" (decimal point).
 ** Change that if you do not want to use C locales. (Code using this
-** macro must include the header 'locale.h'.)
+** macro must include header 'locale.h'.)
 */
 #if !defined(lua_getlocaledecpoint)
+#ifdef __ANDROID__
+#define lua_getlocaledecpoint()		('.')
+#else
 #define lua_getlocaledecpoint()		(localeconv()->decimal_point[0])
+#endif
 #endif
 
 
@@ -756,7 +761,7 @@
 ** of a function in debug information.
 ** CHANGE it if you want a different size.
 */
-#define LUA_IDSIZE	60
+#define LUA_IDSIZE	128
 
 
 /*
@@ -776,6 +781,13 @@
 
 
 
+/*
+@@ LUA_QL describes how error messages quote program elements.
+** Lua does not use these macros anymore; they are here for
+** compatibility only.
+*/
+#define LUA_QL(x)	"'" x "'"
+#define LUA_QS		LUA_QL("%s")
 
 
 /* =================================================================== */

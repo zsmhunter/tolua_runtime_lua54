@@ -1,4 +1,5 @@
-luacdir="lua53"
+luacdir53="lua53"
+luacdir54="lua54"
 luajitdir="luajit-2.1"
 luapath=""
 lualibname=""
@@ -8,7 +9,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 while :
 do
-    echo "Please choose (1)luajit; (2)lua5.3"
+    echo "Please choose (1)luajit; (2)lua5.3; (3)lua5.4"
     if [ $# -eq 0 ] 
     then
         read input
@@ -26,10 +27,17 @@ do
             break
         ;;
         "2")
-            luapath=$luacdir
+            luapath=$luacdir53
             lualibname="liblua"
             lualinkpath="android53"
             outpath="Plugins53"
+            break
+        ;;
+        "3")
+            luapath=$luacdir54
+            lualibname="liblua"
+            lualinkpath="android54"
+            outpath="Plugins54"
             break
         ;;
         *)
@@ -54,11 +62,17 @@ NDK_SYSROOT_LINK=$NDK/platforms/android-$NDKABI/arch-arm64
 NDKARCH="-DLJ_ABI_SOFTFP=0 -DLJ_ARCH_HASFPU=1 -DLUAJIT_ENABLE_GC64=1"
 
 case $luapath in 
-    $luacdir)        
+    $luacdir53)        
         $NDK/ndk-build.cmd clean APP_ABI="armeabi-v7a,x86,arm64-v8a" APP_PLATFORM=android-$NDKABI
         $NDK/ndk-build.cmd APP_ABI="arm64-v8a" APP_PLATFORM=android-$NDKABI
         cp obj/local/arm64-v8a/$lualibname.a ../../android53/jni/
         $NDK/ndk-build.cmd clean APP_ABI="armeabi-v7a,x86,arm64-v8a" APP_PLATFORM=android-$NDKABI        	        
+    ;;
+    $luacdir54)        
+        $NDK/ndk-build.cmd clean APP_ABI="armeabi-v7a,x86,arm64-v8a" APP_PLATFORM=android-$NDKABI
+        $NDK/ndk-build.cmd APP_ABI="arm64-v8a" APP_PLATFORM=android-$NDKABI
+        cp obj/local/arm64-v8a/$lualibname.a ../../android54/jni/
+        $NDK/ndk-build.cmd clean APP_ABI="armeabi-v7a,x86,arm64-v8a" APP_PLATFORM=android-$NDKABI                   
     ;;
     $luajitdir)        
         make clean        
@@ -71,5 +85,6 @@ esac
 cd ../../$lualinkpath
 $NDK/ndk-build.cmd clean APP_ABI="armeabi-v7a,x86,arm64-v8a" APP_PLATFORM=android-$NDKABI
 $NDK/ndk-build.cmd APP_ABI="arm64-v8a" APP_PLATFORM=android-$NDKABI
+mkdir -p ../$outpath/Android/libs/arm64-v8a
 cp libs/arm64-v8a/libtolua.so ../$outpath/Android/libs/arm64-v8a
 $NDK/ndk-build.cmd clean APP_ABI="armeabi-v7a,x86,arm64-v8a" APP_PLATFORM=android-$NDKABI

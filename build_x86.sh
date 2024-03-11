@@ -1,4 +1,5 @@
-luacdir="lua53"
+luacdir53="lua53"
+luacdir54="lua54"
 luajitdir="luajit-2.1"
 luapath=""
 lualibname=""
@@ -8,7 +9,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 while :
 do
-    echo "Please choose (1)luajit; (2)lua5.3"
+    echo "Please choose (1)luajit; (2)lua5.3; (3)lua5.4"
     if [ $# -eq 0 ] 
     then
         read input
@@ -26,10 +27,17 @@ do
             break
         ;;
         "2")
-            luapath=$luacdir
+            luapath=$luacdir53
             lualibname="liblua"
             lualinkpath="android53"
             outpath="Plugins53"
+            break
+        ;;
+        "3")
+            luapath=$luacdir54
+            lualibname="liblua"
+            lualinkpath="android54"
+            outpath="Plugins54"
             break
         ;;
         *)
@@ -52,10 +60,16 @@ NDK_SYSROOT_BUILD=$NDK/sysroot
 NDK_SYSROOT_LINK=$NDK/platforms/android-$NDKABI/arch-x86
 
 case $luapath in 
-    $luacdir)
+    $luacdir53)
         $NDK/ndk-build.cmd clean APP_ABI="armeabi-v7a,x86,arm64-v8a" APP_PLATFORM=android-$NDKABI
         $NDK/ndk-build.cmd APP_ABI="x86" APP_PLATFORM=android-$NDKABI
         cp obj/local/x86/$lualibname.a ../../android53/jni/
+        $NDK/ndk-build.cmd clean APP_ABI="armeabi-v7a,x86,arm64-v8a" APP_PLATFORM=android-$NDKABI
+    ;;
+    $luacdir54)
+        $NDK/ndk-build.cmd clean APP_ABI="armeabi-v7a,x86,arm64-v8a" APP_PLATFORM=android-$NDKABI
+        $NDK/ndk-build.cmd APP_ABI="x86" APP_PLATFORM=android-$NDKABI
+        cp obj/local/x86/$lualibname.a ../../android54/jni/
         $NDK/ndk-build.cmd clean APP_ABI="armeabi-v7a,x86,arm64-v8a" APP_PLATFORM=android-$NDKABI
     ;;
     $luajitdir)
@@ -69,5 +83,6 @@ esac
 cd ../../$lualinkpath
 $NDK/ndk-build.cmd clean APP_ABI="armeabi-v7a,x86,arm64-v8a" APP_PLATFORM=android-$NDKABI
 $NDK/ndk-build.cmd APP_ABI="x86" APP_PLATFORM=android-$NDKABI
+mkdir -p ../$outpath/Android/libs/x86
 cp libs/x86/libtolua.so ../$outpath/Android/libs/x86
 $NDK/ndk-build.cmd clean APP_ABI="armeabi-v7a,x86,arm64-v8a" APP_PLATFORM=android-$NDKABI

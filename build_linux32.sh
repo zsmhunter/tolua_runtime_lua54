@@ -1,7 +1,8 @@
 #!/bin/bash
 # 32 Bit Version
 # build for Ubuntu16.04
-luacdir="lua53"
+luacdir53="lua53"
+luacdir54="lua54"
 luajitdir="luajit-2.1"
 luapath=""
 lualibname=""
@@ -10,7 +11,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 while :
 do
-    echo "Please choose (1)luajit; (2)lua5.3"
+    echo "Please choose (1)luajit; (2)lua5.3; (3)lua5.4"
     if [ $# -eq 0 ] 
     then
         read input
@@ -27,9 +28,15 @@ do
             break
         ;;
         "2")
-            luapath=$luacdir
+            luapath=$luacdir53
             lualibname="liblua"
             outpath="Plugins53"
+            break
+        ;;
+        "3")
+            luapath=$luacdir54
+            lualibname="liblua"
+            outpath="Plugins54"
             break
         ;;
         *)
@@ -45,7 +52,10 @@ cd $DIR/$luapath
 make clean
 
 case $luapath in 
-    $luacdir)
+    $luacdir53)
+        make linux BUILDMODE=static CC="gcc -fPIC -m32 -O2"
+    ;;
+    $luacdir54)
         make linux BUILDMODE=static CC="gcc -fPIC -m32 -O2"
     ;;
     $luajitdir)

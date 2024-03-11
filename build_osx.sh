@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 lua53dir="macnojit53/"
+lua54dir="macnojit54/"
 lua51dir="macnojit/"
 luapath=""
 lualibname="liblua"
@@ -7,7 +8,7 @@ outpath=""
 
 while :
 do
-    echo "Please choose (1)lua5.1; (2)lua5.3"
+    echo "Please choose (1)lua5.1; (2)lua5.3; (3)lua5.4"
     if [ $# -eq 0 ] 
     then
         read input
@@ -27,6 +28,11 @@ do
             outpath="Plugins53"
             break
         ;;
+        "3")
+            luapath=$lua54dir
+            outpath="Plugins54"
+            break
+        ;;
         *)
             echo "Please enter 1 or 2!!"
             continue
@@ -38,4 +44,5 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR/$luapath
 xcodebuild clean
 xcodebuild -configuration=Release
+mkdir -p ../$outpath
 cp -r build/Release/tolua.bundle ../$outpath/

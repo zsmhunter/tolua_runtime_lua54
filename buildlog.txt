@@ -1,0 +1,60 @@
+Please choose (1)luajit; (2)lua5.3 (3)lua5.4
+param_input: 3
+select : lua54
+mingw32-make[1]: Entering directory 'D:/Unity/tolua_runtime_complie/tolua_runtime/lua54/src'
+rm -f liblua.a lua luac lapi.o lcode.o lctype.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o lmem.o lobject.o lopcodes.o lparser.o lstate.o lstring.o ltable.o ltm.o lundump.o lvm.o lzio.o lauxlib.o lbaselib.o lcorolib.o ldblib.o liolib.o lmathlib.o loadlib.o loslib.o lstrlib.o ltablib.o lutf8lib.o linit.o  lua.o luac.o
+mingw32-make[1]: Leaving directory 'D:/Unity/tolua_runtime_complie/tolua_runtime/lua54/src'
+mingw32-make[1]: Entering directory 'D:/Unity/tolua_runtime_complie/tolua_runtime/lua54/src'
+D:/Unity/tolua_runtime_complie/msys64/mingw64/bin/mingw32-make "LUA_A=lua54.dll" "LUA_T=lua.exe" \
+"AR=gcc -m64 -std=gnu99 -shared -o" "RANLIB=strip --strip-unneeded" \
+"SYSCFLAGS=-DLUA_BUILD_AS_DLL" "SYSLIBS=" "SYSLDFLAGS=-s" lua.exe
+mingw32-make[2]: Entering directory 'D:/Unity/tolua_runtime_complie/tolua_runtime/lua54/src'
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lua.o lua.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lapi.o lapi.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL   -c lcode.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lctype.o lctype.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o ldebug.o ldebug.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o ldo.o ldo.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o ldump.o ldump.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lfunc.o lfunc.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lgc.o lgc.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL   -c llex.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lmem.o lmem.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lobject.o lobject.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lopcodes.o lopcodes.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL   -c lparser.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lstate.o lstate.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lstring.o lstring.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o ltable.o ltable.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o ltm.o ltm.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lundump.o lundump.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lvm.o lvm.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lzio.o lzio.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lauxlib.o lauxlib.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lbaselib.o lbaselib.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lcorolib.o lcorolib.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o ldblib.o ldblib.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o liolib.o liolib.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lmathlib.o lmathlib.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o loadlib.o loadlib.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o loslib.o loslib.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lstrlib.o lstrlib.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o ltablib.o ltablib.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o lutf8lib.o lutf8lib.c
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3 -DLUA_BUILD_AS_DLL    -c -o linit.o linit.c
+gcc -m64 -std=gnu99 -shared -o lua54.dll lapi.o lcode.o lctype.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o lmem.o lobject.o lopcodes.o lparser.o lstate.o lstring.o ltable.o ltm.o lundump.o lvm.o lzio.o lauxlib.o lbaselib.o lcorolib.o ldblib.o liolib.o lmathlib.o loadlib.o loslib.o lstrlib.o ltablib.o lutf8lib.o linit.o 
+strip --strip-unneeded lua54.dll
+gcc -m64 -std=gnu99 -o lua.exe -s  lua.o lua54.dll -lm  
+mingw32-make[2]: Leaving directory 'D:/Unity/tolua_runtime_complie/tolua_runtime/lua54/src'
+D:/Unity/tolua_runtime_complie/msys64/mingw64/bin/mingw32-make "LUAC_T=luac.exe" luac.exe
+mingw32-make[2]: Entering directory 'D:/Unity/tolua_runtime_complie/tolua_runtime/lua54/src'
+gcc -m64 -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o luac.o luac.c
+ar rcu liblua.a lapi.o lcode.o lctype.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o lmem.o lobject.o lopcodes.o lparser.o lstate.o lstring.o ltable.o ltm.o lundump.o lvm.o lzio.o lauxlib.o lbaselib.o lcorolib.o ldblib.o liolib.o lmathlib.o loadlib.o loslib.o lstrlib.o ltablib.o lutf8lib.o linit.o 
+ranlib liblua.a
+gcc -m64 -std=gnu99 -o luac.exe   luac.o liblua.a -lm  
+mingw32-make[2]: Leaving directory 'D:/Unity/tolua_runtime_complie/tolua_runtime/lua54/src'
+mingw32-make[1]: Leaving directory 'D:/Unity/tolua_runtime_complie/tolua_runtime/lua54/src'
+mingw32-make[1]: Entering directory 'D:/Unity/tolua_runtime_complie/tolua_runtime/lua54/src'
+rm -f liblua.a lua luac lapi.o lcode.o lctype.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o lmem.o lobject.o lopcodes.o lparser.o lstate.o lstring.o ltable.o ltm.o lundump.o lvm.o lzio.o lauxlib.o lbaselib.o lcorolib.o ldblib.o liolib.o lmathlib.o loadlib.o loslib.o lstrlib.o ltablib.o lutf8lib.o linit.o  lua.o luac.o
+mingw32-make[1]: Leaving directory 'D:/Unity/tolua_runtime_complie/tolua_runtime/lua54/src'
+build tolua.dll success

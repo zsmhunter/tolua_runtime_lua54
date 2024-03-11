@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-luacdir="lua53"
+luacdir53="lua53"
+luacdir54="lua54"
 luajitdir="luajit-2.1"
 luapath=""
 lualibname=""
@@ -8,7 +9,7 @@ outpath=""
 
 while :
 do
-    echo "Please choose (1)luajit; (2)lua5.3"
+    echo "Please choose (1)luajit; (2)lua5.3; (3)lua5.4"
     if [ $# -eq 0 ] 
     then
         read input
@@ -26,10 +27,17 @@ do
             break
         ;;
         "2")
-            luapath=$luacdir
+            luapath=$luacdir53
             lualibname="liblua"
             outpath="Plugins53"
             linkpath="iOS53"
+            break
+        ;;
+        "3")
+            luapath=$luacdir54
+            lualibname="liblua"
+            outpath="Plugins54"
+            linkpath="iOS54"
             break
         ;;
         *)
@@ -66,8 +74,15 @@ fi
 rm "$DESTDIR"/*.a
 
 case $luapath in 
-    $luacdir)
+    $luacdir53)
         cd $DESTDIR/lua53/
+        xcodebuild clean
+        xcodebuild -configuration=Release
+        cp -f ./build/Release-iphoneos/$lualibname.a "$DESTDIR"/$lualibname.a
+        cd ../
+    ;;
+    $luacdir54)
+        cd $DESTDIR/lua54/
         xcodebuild clean
         xcodebuild -configuration=Release
         cp -f ./build/Release-iphoneos/$lualibname.a "$DESTDIR"/$lualibname.a
@@ -99,4 +114,5 @@ esac
 
 xcodebuild clean
 xcodebuild -configuration=Release
+mkdir -p ../$outpath/iOS
 cp -f ./build/Release-iphoneos/libtolua.a ../$outpath/iOS/

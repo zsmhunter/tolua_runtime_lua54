@@ -2805,7 +2805,7 @@ LUALIB_API int luaL_getversion()
     return LUA_VERSION_NUM;
 }
 
-#if LUA_VERSION_NUM == 503
+#if LUA_VERSION_NUM >= 503
 
 #if !defined(LUA_COMPAT_MODULE)
 // LUALIB_API void luaL_register(lua_State*L, const char*libname, const luaL_Reg* l)
